@@ -1,0 +1,346 @@
+/*main rules   */
+body{
+    
+     background-color:#888;
+     
+}
+.input-container{
+    position: relative;
+}
+
+.asterisk{
+    position:absolute;
+   right:10px;
+   top:8px;
+    font-size:30px;
+    color:#d20707;
+}
+.nice-message{
+    padding:10px ; 
+        background-color: #fff;
+        margin: 10px 0;
+        border-left: 5px solid #080;
+}
+
+
+h1{
+    
+    font-size: 55px;
+    margin: 40px 0;
+    font-weight: bold; 
+    color:#666;
+}
+
+
+/*main rules   */
+/*  bootstrap edits   */
+.navbar{
+    border-radius: 0;
+    margin-bottom: 0;
+}
+.nav> li>a,
+.navbar-brand{
+    font-size: 1em;
+}
+
+.navbar-inverse .navbar-nav> .open>a,
+.navbar-inverse .navbar-nav> .open>a:focus
+.navbar-inverse .navbar-nav> .open>a:hover
+.dropdown-menu{
+    background-color: #3498db;
+}
+
+.dropdown-menu{
+     
+ min-width:180px;
+ padding: 0;
+ font-size: 1em;
+ border: none;
+ border-radius: 0;
+
+}
+.dropdown-menu> li > a:focus,
+.dropdown-menu> li > a:hover
+{
+    color:#fff;
+    background-color: #8e44ad;
+}
+
+
+ 
+
+
+/* bootstrap edits   */
+
+.item-box{
+    
+    position:relative;
+}
+item-box .price-tag
+{
+   background-color: #999;
+   padding: 2px 10px;
+   position: absolute;
+   left: 0;
+   top: 10px;
+   font-weight: bold;
+   color:#fff;
+    
+}
+
+/* login page   */
+
+.login-page form{
+    max-width: 300px;
+    margin: auto;
+}
+
+
+.login-page form input{
+    
+    margin-bottom: 10px;
+}
+.login-page .selected{
+    
+     color: #b22020;
+}
+
+.login-page h1{
+    
+     color: #666;
+}
+
+.login-page h1 span{
+    
+   cursor:pointer;
+
+}
+
+.login-page .signup{
+    
+    display: none;
+
+}
+
+/* login page   */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*main rules   */
+/*login form  */
+.login{
+   width:300px ;
+   margin:100px auto;
+    
+    
+}
+.form-control{
+    position: relative;
+}
+ 
+.login h4{
+  color:#fff;    
+}
+
+.login input{
+   
+   margin-bottom:10px ;
+    
+    
+}
+.login .form-control{
+   
+    background-color:#EAEAEA;
+    
+    
+} 
+.login .btn{
+   
+    background-color:#008dde;
+ 
+}  
+/************login form ************ */
+    
+
+/********   dashboard page  ************/
+ .home-state .stat{
+    
+    
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 15px;
+}
+
+.home-state .stat a{
+    
+     color:#fff;
+}
+
+ 
+ .home-state {
+    
+    background-color: #fff;
+    
+     
+}
+ .home-state .st-members{
+    
+    background-color: #c0392b;
+    
+     
+}
+ .home-state .st-pending{
+    
+    background-color: #3498db;
+    
+ }
+
+ .home-state .st-items{
+    
+    background-color: #d35400;
+    
+     
+}
+ .home-state .st-comments{
+    
+    background-color: #8e44ad;
+    
+     
+}
+.home-state .stat span{
+    
+     display: block;
+      font-size: 60px;
+      color:#fff;
+}
+.panel-heading form{
+    height: 34px;
+}
+ 
+.latest{
+    
+    margin: 30px;
+   
+}
+
+.latest-users {
+    padding: 20px;
+     
+    
+}
+
+.latest-users li {
+   
+   width:400px;
+   height: 34px;
+  
+
+}
+.latest-users li:nth-child(odd){
+   background-color:#999; 
+  
+}
+
+
+.latestu{
+    
+    width: 50px;
+    height: 34px;
+       
+   
+     
+}
+.special{
+    
+    background-color: #ce8483;
+       
+   
+     
+}
+
+
+    
+ 
+
+
+ 
+
+
+
+/********   dashboard page  ************/
+/*page member  */
+ 
+
+.show-pass {
+    position: absolute;
+    right: -10px;
+    font-size: 30px;
+    top:0px;
+}
+ .main-table tr:first-child td{
+    background-color:#333;
+    color:#fff;
+    
+     
+ }

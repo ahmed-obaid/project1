@@ -1,0 +1,174 @@
+/*main rules   */
+body{
+    
+     background-color:#f4f4f4;
+     font-size:12px;
+}
+
+ 
+ 
+.asterisk{
+    position:absolute;
+   right:30px;
+   top:8px;
+    font-size:30px;
+    color:#d20707;
+}
+
+
+.show-pass {
+    position: absolute;
+    right: -10px;
+    font-size: 30px;
+    top:0px;
+}
+ .main-table tr:first-child td{
+    background-color:#333;
+    color:#fff;
+    
+     
+ }
+ 
+ 
+
+/*main rules   */
+/*login form  */
+.login{
+   width:300px ;
+   margin:100px auto;
+    
+    
+}
+.form-control{
+    position: relative;
+}
+ 
+.login h4{
+  color:#fff;    
+}
+
+.login input{
+   
+   margin-bottom:10px ;
+    
+    
+}
+.login .form-control{
+   
+    background-color:#EAEAEA;
+    
+    
+} 
+.login .btn{
+   
+    background-color:#008dde;
+ 
+}  
+/************login form ************ */
+    
+
+/********   dashboard page  ************/
+ .home-state .stat{
+    
+    
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 15px;
+}
+
+.home-state .stat a{
+    
+     color:#fff;
+}
+
+ 
+ .home-state {
+    
+    background-color: #fff;
+    
+     
+}
+ .home-state .st-members{
+    
+    background-color: #c0392b;
+    
+     
+}
+ .home-state .st-pending{
+    
+    background-color: #3498db;
+    
+ }
+
+ .home-state .st-items{
+    
+    background-color: #d35400;
+    
+     
+}
+ .home-state .st-comments{
+    
+    background-color: #8e44ad;
+    
+     
+}
+.home-state .stat span{
+    
+     display: block;
+      font-size: 60px;
+      color:#fff;
+}
+.panel-heading form{
+    height: 34px;
+}
+ 
+.latest{
+    
+    margin: 30px;
+   
+}
+
+.latest-users {
+    padding: 20px;
+     
+    
+}
+
+.latest-users li {
+   
+   width:400px;
+   height: 34px;
+  
+
+}
+.latest-users li:nth-child(odd){
+   background-color:#999; 
+  
+}
+
+
+.latestu{
+    
+    width: 50px;
+    height: 34px;
+       
+   
+     
+}
+.special{
+    
+    background-color: #ce8483;
+       
+   
+     
+}
+
+
+    
+ 
+
+
+ 
+
+
+ 
