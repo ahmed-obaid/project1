@@ -3,12 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ecommerce/include/template/header.php</file>
+            <file>file:/C:/xampp/htdocs/ecommerce/admin/include/template/navbar.php</file>
             <file>file:/C:/xampp/htdocs/ecommerce/index.php</file>
             <file>file:/C:/xampp/htdocs/ecommerce/layout/css/backend.css</file>
-            <file>file:/C:/xampp/htdocs/ecommerce/login.php</file>
+            <file>file:/C:/xampp/htdocs/ecommerce/profile.php</file>
+            <file>file:/C:/xampp/htdocs/ecommerce/admin/layout/css/backend.css</file>
+            <file>file:/C:/xampp/htdocs/ecommerce/admin/login.php</file>
             <file>file:/C:/xampp/htdocs/ecommerce/include/functions/fun.php</file>
+            <file>file:/C:/xampp/htdocs/ecommerce/init.php</file>
             <file>file:/C:/xampp/htdocs/ecommerce/include/template/footer.php</file>
+            <file>file:/C:/xampp/htdocs/ecommerce/admin/members.php</file>
+            <file>file:/C:/xampp/htdocs/ecommerce/include/template/header.php</file>
+            <file>file:/C:/xampp/htdocs/ecommerce/admin/include/languages/eng.php</file>
+            <file>file:/C:/xampp/htdocs/ecommerce/login.php</file>
+            <file>file:/C:/xampp/htdocs/ecommerce/items.php</file>
+            <file>file:/C:/xampp/htdocs/ecommerce/admin/include/template/footer.php</file>
+            <file>file:/C:/xampp/htdocs/ecommerce/newadd.php</file>
             <file>file:/C:/xampp/htdocs/ecommerce/categories.php</file>
         </group>
     </open-files>

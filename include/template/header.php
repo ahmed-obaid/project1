@@ -5,16 +5,44 @@
  <head>
   <meta charset="utf-8"/> 
  <title> <?php title()?>  </title>
-  
+   <link rel="stylesheet" href="layout/css/fontawesome.min.css"/>
     <link rel="stylesheet" href="layout/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="layout/css/fontawesome.min.css"/>
+   
     <link rel="stylesheet" href="layout/css/backend.css"/>  
 </head>
    <body>
    <div class="upper-nav">
        <div class="container">
-           <a href="login.php"><span class="pull-right" > login/signup </span> </a>
-       
+           <?php
+           if(isset($_SESSION['user'])){
+               ?>
+             <img class="img-thumbnail img-circle" src="<?php echo'admin/uploads/avatars/'.$_SESSION['avatarmember'].' ' ;  ?> " alt=""/>
+            <div class="btn-group my-info">
+                  
+                    <span class="btn dropdown-toggle" data-toggle="dropdown">
+                        <?php echo $_SESSION['user'];  ?>
+                       
+                        <span class="caret"></span>
+                    </span>
+                    <ul class="dropdown-menu">
+                        <li><a href="profile.php"> my profil  </a>  </li>
+                        <li><a href="newadd.php"> new item  </a>  </li>
+                        <li><a href="logout.php"> logout  </a>  </li>
+                        
+                        
+                    </ul>
+                   
+               
+             </div> 
+                   
+                 <?php  
+           }else{
+                
+          echo' <a href="login.php"><span class="pull-right" > login/signup </span> </a>';
+                   
+                   
+              }  
+            ?>
        </div>
    </div>
       
@@ -40,7 +68,7 @@
           { 
             echo'  <li> 
                      
-                     <a href="categories.php?pageid='.$cat['id'].'&pagename='. str_replace('','-',$cat['name']).'">'.$cat['name'].'</a>
+                     <a href="categories.php?pageid='.$cat['id'].'  ">'.$cat['name'].'</a>
                    </li>
                ';
            

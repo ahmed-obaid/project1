@@ -34,11 +34,13 @@ $rows=$stmt->fetchall();
                     
                     <div class="table-responsive"  >
                         
-                        <table class="main-table text-center table table-bordered">
+                        <table class="main-table text-center table table-bordered manage-members">
                             
                             <tr>
                                 <td> #id </td>
+                                  <td> image </td>
                                 <td> username </td>
+                               
                                 <td>email  </td>
                                 <td> full name </td>
                                 <td> registerd </td>
@@ -51,6 +53,14 @@ $rows=$stmt->fetchall();
                                      foreach ($rows as $row){
                                   echo '<tr>';
                                           echo '<td>'.$row['userid'].'</td>';
+                                            echo '<td>';
+                                            if( ! empty($row['avatar']) ) 
+                                               {
+                                                 echo '<img src="uploads/avatars/'.$row['avatar'].' " />';
+                                            
+                                               }else{ echo'<img src="uploads/avatars/dd.jpg" />'; }
+                                                
+                                                 echo ' </td>';
                                           echo '<td>'.$row['username'].'</td>';
                                           echo '<td>'.$row['email'].'</td>';
                                           echo '<td>'.$row['fulname'].'</td>';
@@ -96,7 +106,7 @@ $rows=$stmt->fetchall();
            
             <div class="container ">
                 <h1 class='text-center'>Add member  <h1> 
-                        <form class="form-horizontal" action="members.php?do=insert" method="POST">
+                        <form class="form-horizontal" action="members.php?do=insert" method="POST" enctype="multipart/form-data">
                             
                     <!-- username-->
                     <div class="form-group">
@@ -124,14 +134,26 @@ $rows=$stmt->fetchall();
                         </div>    
                     </div>
                      <!-- email-->
-                      <!-- ful name-->
+                      <!-- full name-->
                     <div class="form-group">
-                        <label class="col-sm-5 control-label">ful name </label>
+                        <label class="col-sm-5 control-label">full name </label>
                         <div class="col-sm-10 col-md-6" >
                             <input type="text" name="fulname" class="form-control" required='required'  />  
                         </div>    
                     </div>
-                     <!-- ful name-->
+                     <!-- full name-->
+                      <!-- image name-->
+                     
+                   <div class="form-group">
+                        <label class="col-sm-5 control-label"> avatar </label>
+                        <div class="col-sm-10 col-md-6" >
+                            <input type="file" name="avatar" class="form-control" />  
+                        </div>    
+                    </div>
+                     
+                     
+                     
+                      <!-- inage name-->
                       <!--  submit-->
                     <div class="form-group">
                         
@@ -157,10 +179,29 @@ $rows=$stmt->fetchall();
           //************************************page insert
                } elseif($do=='insert'){
                    
-                        
-      
+               
         if($_SERVER['REQUEST_METHOD']=='POST')
              {
+            
+            
+            // ====================avatar===================  
+                   
+                   
+                   
+                 $avatarname=$_FILES['avatar']['name'];
+                  $avatarsize=$_FILES['avatar']['size'];
+                  $avatartmp=$_FILES['avatar']['tmp_name'];
+                 $avatartype=$_FILES['avatar']['type'];
+                 
+                  
+                   $avatarextention=array("jpeg","jpg","png"); 
+                   $explod=explode('.',$avatarname);
+                       
+                   
+                 $exeten= strtolower(end( $explod));
+          
+                 // ====================avatar===================  
+        
                 echo"<h1 class='text-center'>insert member  <h1> ";
                echo '<div class="container">';
                 $name=$_POST['username'];
@@ -203,10 +244,24 @@ $rows=$stmt->fetchall();
                         if(empty($fulname))
                        {
                        
-                        $formerrors[]='<div class="alert alert-danger">fulname cant be<strong> empty </strong></div>';  
+                        $formerrors[]='<div class="alert alert-danger">fullname cant be<strong> empty </strong></div>';  
                        
                        }
-                       foreach($formerrors as $errors)
+                       
+                         
+                            if( ! empty($avatarname) && ! in_array($exeten, $avatarextention ))
+                            { $formerrors[]='<div class="alert alert-danger"> the extention is not <strong> allowed </strong></div>';}
+
+                       
+                            if( empty($avatarname))
+                            { $formerrors[]='<div class="alert alert-danger"> you must choose a photo  </div>';}
+                              
+                            
+                            if($avatarsize>4195428 )
+                            { $formerrors[]='<div class="alert alert-danger"> the size of photo is big </div>';}
+                      
+                               
+                        foreach($formerrors as $errors)
                            {
                            echo $errors ;
                            
@@ -214,50 +269,55 @@ $rows=$stmt->fetchall();
                     
                         if(empty($formerrors))
                            {
+                            
+                           $avatar= rand(0,1000000).'_'. $avatarname ;
+                           $track="uploads/avatars/"; 
+                   
+                          move_uploaded_file( $avatartmp,"uploads/avatars/".$avatar );
+                   
                           $check= checkitems('username','user', $name );
                               if($check==1){
-                                        
-
+                                       
                                             $mes= ' sorry the username has already exist  '  ;
                                             $url=$_SERVER['HTTP_REFERER'];
-                                            redirecthome( $mes,$url,3);
-
-                                         
+                                           redirecthome( $mes,$url,3);
+                                        
                                        }else{
-                         
+                  
                 
                 $smts =$con->prepare('INSERT INTO
-                                                   user(username , password, email, fulname,recstatus ,date) 
-                                                  VALUES(  :u,:p,:e,:f,0, now()   )') ;
+                                                   user(username , password, email, fulname,recstatus ,date,avatar) 
+                                                  VALUES(  :u,:p,:e,:f,0, now(),:a   )') ;
                   $smts->execute(array(
                                'u'=>$name,
                                 'p'=>$hashpass,
                                  'e'=>$email,
-                                  'f'=>$fulname
-                      
+                                  'f'=>$fulname,
+                                    'a'=>$avatar   
                                                  ));
                   
                   $mes= ' the insert has completed '  ;
                   $url=$_SERVER['HTTP_REFERER'];
-                redirecthome( $mes,$url,5);
+               // redirecthome( $mes,$url,5);
                 
                   
-                  
-                     echo $smts->rowCount();
+    
+                     
                                        }
                        }     
-                        
+                       
             }else{
+                echo '<div class=alert alert-danger>';
                   $erro= 'sorry you cant entering this page directly'  ;
                   $url= 'index.php';
-                redirecthome( $erro,$url,5);
+                //redirecthome( $erro,$url,5);
                 
                 
-             
+             echo '</div>';
                 
                   }
    
-    echo '</div>';
+    
     
     
           //************************************page DELETE

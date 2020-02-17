@@ -5,7 +5,7 @@
       header('location:dashboard.php');
       
   }
-  $nonavbar='';
+ 
    $title='login';
   
   include 'init.php';
@@ -18,20 +18,24 @@
     $username = $_POST['user'];  
     $password = $_POST['pass']; 
     $hashedpass = sha1($password); 
-     ECHO   $username. $password;
+    
      $stmt= $con->prepare('SELECT userid,username,password FROM user WHERE username=? AND password=? AND groupid=1');
-     $stmt->execute(array($username, $hashedpass));
+     $stmt->execute(array($username,$hashedpass));
     
       $count=$stmt->rowCount();
-      $row=$stmt->fetch();
-       ECHO $count;
-      if($count=1){
+     
+      
+      if($count==1){
+        $row=$stmt->fetch();
        $_SESSION['username']= $username ;
         $_SESSION['id']= $row['userid'];
        header('location:dashboard.php');
        exit();
       
           
+      }else{
+          
+          echo '<div class="alert alert-danger"> you are not an admin </div>';
       }
  
   }

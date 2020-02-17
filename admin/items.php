@@ -180,7 +180,7 @@ $rows=$stmt->fetchall();
                        <div class="form-group">
                         <label class="col-sm-5 control-label">category </label>
                              <div class="col-sm-10 col-md-6"  required='required'  >
-                                 <select class='form-control'  name='catname'> 
+                                 <select class='form-control'  name='catname'required='required' > 
                                       <option value='0'>  </option>
                                       <option value='1'>  
                                          <?php 

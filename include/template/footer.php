@@ -1,7 +1,7 @@
 
-    
+  <script type="text/javascript" src="layout/js/jquery-3.4.1.min.js"> </script>  
 <script src="layout/js/bootstrap.min.js"> </script>
-<script type="text/javascript" src="layout/js/jquery-3.4.1.min.js"> </script>
+
  
   <script  type="text/javascript">
   $(document).ready(function(){
@@ -81,9 +81,28 @@
        }
   }); 
     
-     
+    //********************form item**************** 
+    
+    $('.live-name').keyup(function(){
+    
+      $('.live-preview .caption h3').text( $(this).val());
+    
+    })
     
     
+    $('.live-price').keyup(function(){
+    
+      $('.live-preview span').text ('$'+$(this).val()) ;
+    
+    })
+    
+    
+    
+    $('.live-desc').keyup(function(){
+    
+      $('.live-preview .caption p').text($(this).val());
+    
+    })
  
  
 

@@ -23,12 +23,12 @@
     </ul> 
        <ul class="nav navbar-nav navbar-right">
            <li class='dropdown'>
-               <a href='#' id='navbarDropdown' class='nav-link dropdown-toggle' data-toggle='dropdown'role='button' aria-haspopup='true' aria-expanded='false'><?php echo lang('member'); ?></a>
-                   <div class='dropdown-menu'>
+               <a href='#' id='navbarDropdown' class='nav-link dropdown-toggle' data-toggle='dropdown'role='button' aria-haspopup='true' aria-expanded='false'><?php if(isset($_SESSION['username'])){ echo $_SESSION['username'];} ?></a>
+                   <ul class='dropdown-menu'>
                        <li><a href='members.php?do=edit&userid=<?php echo $_SESSION['id'] ?>'> <?php echo lang('edit'); ?></a> </li>
                         <li><a href='#'> <?php echo lang('sett'); ?></a> </li>
                          <li><a href='logout.php'> <?php echo lang('out'); ?>t</a> </li>
-                   </div>
+                   </ul>
                
            </li>
        </ul>

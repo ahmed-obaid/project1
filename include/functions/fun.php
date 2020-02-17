@@ -23,18 +23,33 @@
   //-------------------get items
   
   
-    function getitems($id )
+    function getitems($table,$where=NULL,$order )
   
  {
-      global $con;         
-    $items=$con->prepare("SELECT * FROM items WHERE cat_id=? ORDER BY item_id DESC ");
-    $items->execute(array($id));
+        
+      global $con; 
+      
+      $sql=$where==NULL?'':$where;
+    $items=$con->prepare("SELECT * FROM $table $sql ORDER BY $order DESC ");
+    $items->execute(array());
     $rows=$items->fetchall();
    return $rows;
   }
     
-      
-     
+   //-------------------chang status
+  //-------------------chang status
+  //-------------------chang status   
+    function changestaus() {
+ $stmt= $con->prepare('SELECT username,recstatus FROM user WHERE username=? AND recstatus=? ');
+     $status->execute(array($username, 0));
+    
+      $count=$status->rowCount();
+      if( $count>0){
+          
+          return $count ;
+      }
+
+    }
 
 
 
@@ -43,10 +58,37 @@
 
 
 
-
-
-
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 
 //------------------- old function

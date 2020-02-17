@@ -1,7 +1,7 @@
 /*main rules   */
 body{
     
-     background-color:#888;
+     background-color:#ccc;
      
 }
 .input-container{
@@ -29,6 +29,12 @@ h1{
     margin: 40px 0;
     font-weight: bold; 
     color:#666;
+}
+.upper-nav img{
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -100,9 +106,14 @@ item-box .price-tag
     
     margin-bottom: 10px;
 }
-.login-page .selected{
+.login-page [data-class="login"].selected{
     
-     color: #b22020;
+     color: #337ab7;
+}
+
+.login-page [data-class="signup"].selected{
+    
+     color: #5cb85c;
 }
 
 .login-page h1{
@@ -122,225 +133,153 @@ item-box .price-tag
 
 }
 
+.login-page .errorsform {
+    
+      width: 300px;
+     margin:auto;
+
+}
+.login-page .errorsform .errorform {
+    
+      width: 300px;
+     min-height:30px;
+     background-color: #fff;
+     color:#d20707;
+     margin-bottom: 10px;
+     text-align: left;
+     border-left: 5px solid #455;
+
+}
 /* login page   */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*main rules   */
-/*login form  */
-.login{
-   width:300px ;
-   margin:100px auto;
-    
-    
+.information ul li{
+   padding: 10px;
 }
-.form-control{
-    position: relative;
+.information{
+    margin-top:20px;
 }
- 
-.login h4{
-  color:#fff;    
+.information ul{
+    margin:0px;
+    padding:0px;
 }
 
-.login input{
-   
-   margin-bottom:10px ;
-    
-    
+.information ul li{
+   padding: 10px;
 }
-.login .form-control{
-   
-    background-color:#EAEAEA;
-    
-    
-} 
-.login .btn{
-   
-    background-color:#008dde;
- 
-}  
-/************login form ************ */
-    
+.information ul li span{
+    display: inline-block;
+   width: 120px;
+}
 
-/********   dashboard page  ************/
- .home-state .stat{
+.information ul li:nth-child(odd){
     
-    
-    border-radius: 10px;
-    padding: 20px;
+   background-color:#9d9d9d;
+}
+.thumbnail .date{
+    text-align: right;
     font-size: 15px;
+    color:#9d9d9d;
+    font-weight: bold;
 }
 
-.home-state .stat a{
-    
-     color:#fff;
+/*========== items page=============   */
+ .item-info ul li{
+   padding: 10px;
+
+}
+.item-info h2, p{
+   padding: 10px;
+
+}
+.item-info h2{
+   margin-top:-15px;
+
 }
 
- 
- .home-state {
-    
-    background-color: #fff;
-    
-     
+.gustom-hr{
+    border-top: 5px solid #080;
 }
- .home-state .st-members{
-    
-    background-color: #c0392b;
-    
-     
-}
- .home-state .st-pending{
-    
-    background-color: #3498db;
-    
- }
 
- .home-state .st-items{
-    
-    background-color: #d35400;
-    
-     
+.add-comment h3{
+  margin: 0 0 10px;  
 }
- .home-state .st-comments{
-    
-    background-color: #8e44ad;
-    
-     
+.add-comment textarea{
+  display:block;
+  margin-bottom: 10px;
+   width: 500px;
+   height: 150px;
 }
-.home-state .stat span{
-    
-     display: block;
-      font-size: 60px;
-      color:#fff;
+
+.comment-box{
+    margin-bottom: 20px;
 }
-.panel-heading form{
-    height: 34px;
+
+.comment-box img{
+   max-width:100px;
 }
- 
-.latest{
+
+.comment-box lead{
+   background-color:#eee;
+   position: relative;
+   padding: 10px;
+}
+
+.comment-box lead:before{
+   content: '';
+   width: 0;
+   height: 0;
+   border-width:15px;
+   border-style: solid;
+   border-color:transparent #e0e0e0;
+   position:absolute;
     
-    margin: 30px;
    
 }
 
-.latest-users {
-    padding: 20px;
-     
+.not-approve{
     
-}
-
-.latest-users li {
-   
-   width:400px;
-   height: 34px;
-  
-
-}
-.latest-users li:nth-child(odd){
-   background-color:#999; 
-  
-}
-
-
-.latestu{
-    
-    width: 50px;
-    height: 34px;
-       
-   
-     
-}
-.special{
-    
-    background-color: #ce8483;
-       
-   
-     
-}
-
-
-    
- 
-
-
- 
-
-
-
-/********   dashboard page  ************/
-/*page member  */
- 
-
-.show-pass {
-    position: absolute;
-    right: -10px;
-    font-size: 30px;
-    top:0px;
-}
- .main-table tr:first-child td{
-    background-color:#333;
     color:#fff;
+    background-color: #080;
+    position: absolute;
+    padding: 10px;
     
-     
- }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
